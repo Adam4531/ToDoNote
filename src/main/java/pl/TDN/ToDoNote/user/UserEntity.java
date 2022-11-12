@@ -3,14 +3,17 @@ package pl.TDN.ToDoNote.user;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @Getter
 @Entity
 @Table(name = "USERS")
 public class UserEntity { //TODO add more attributes and its validators
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String login;
 
