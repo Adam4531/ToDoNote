@@ -18,7 +18,7 @@ public class CheckListService {
         checkListRepository = aCheckListRepository;
     }
 
-    public List<CheckListDTO> getAll() {
-        checkListMapper.fromCheckListEntityListToCheckListDTO(checkListRepository.findAll());
+    public List<CheckListDTO> getAllCheckLists() {
+        return checkListMapper.fromCheckListEntityListToCheckListDTO(checkListRepository.findAll());
     }
 }

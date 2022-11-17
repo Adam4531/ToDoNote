@@ -18,7 +18,7 @@ public class NoteService {
         noteRepository = aNoteRepository;
     }
 
-    public List<NoteDTO> getAll(){
+    public List<NoteDTO> getAllNotes(){
         return noteMapper.fromNoteEntityListToNoteDTO(noteRepository.findAll());
     }
 }
