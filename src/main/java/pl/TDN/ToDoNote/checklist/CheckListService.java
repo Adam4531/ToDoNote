@@ -2,8 +2,9 @@ package pl.TDN.ToDoNote.checklist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.TDN.ToDoNote.checklist.CheckListMapper;
-import pl.TDN.ToDoNote.checklist.CheckListRepository;
+import pl.TDN.ToDoNote.checklist.dto.CheckListDTO;
+
+import java.util.List;
 
 @Service
 public class CheckListService {
@@ -15,5 +16,9 @@ public class CheckListService {
     CheckListService(CheckListMapper aCheckListMapper, CheckListRepository aCheckListRepository) {
         checkListMapper = aCheckListMapper;
         checkListRepository = aCheckListRepository;
+    }
+
+    public List<CheckListDTO> getAll() {
+        checkListMapper.fromCheckListEntityListToCheckListDTO(checkListRepository.findAll());
     }
 }

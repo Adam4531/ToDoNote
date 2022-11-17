@@ -17,6 +17,10 @@ public class UserEntity { //TODO add more attributes and its validators
 
     private String login;
 
+    private String firstName;
+
+    private String secondName;
+
     private String password;
 
     private String email;

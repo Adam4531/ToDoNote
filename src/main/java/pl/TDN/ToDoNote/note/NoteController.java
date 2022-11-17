@@ -1,9 +1,19 @@
 package pl.TDN.ToDoNote.note;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/notes")
 public class NoteController {
+
+    private final NoteService noteService;
+
+    @Autowired
+    public NoteController(NoteService aNoteService) {
+        noteService = aNoteService;
+    }
 
 
 }

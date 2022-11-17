@@ -1,5 +1,11 @@
 package pl.TDN.ToDoNote.user.dto;
 
 
-public class UserDTO { //TODO class or record?
+import lombok.Builder;
+
+public record UserDTO(String login, String firstName, String secondName, String email) { //TODO class or record?
+
+    @Builder
+    public UserDTO {
+    }
 }

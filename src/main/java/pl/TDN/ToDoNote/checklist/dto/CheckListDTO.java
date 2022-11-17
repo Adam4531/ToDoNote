@@ -1,4 +1,10 @@
 package pl.TDN.ToDoNote.checklist.dto;
 
-public class CheckListDTO {
+import lombok.Builder;
+
+public record CheckListDTO (Long id) { //TODO add more attributes
+
+    @Builder
+    public CheckListDTO {
+    }
 }
