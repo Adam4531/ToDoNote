@@ -2,6 +2,7 @@ package pl.TDN.ToDoNote.note;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pl.TDN.ToDoNote.BasicEntity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -10,15 +11,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Table(name = "NOTES")
-public class NoteEntity {
+public class NoteEntity extends BasicEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
 
     private String title;
-
-//    private List<String> thingsToDo;
 
     private String notes;
 

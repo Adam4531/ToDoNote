@@ -13,7 +13,7 @@ public class CheckListMapper {
     private CheckListDTO fromCheckListEntityToCheckListDTO(CheckListEntity aCheckListEntity) {
         return CheckListDTO.builder()
                 .id(aCheckListEntity.getId())
-                //rest of attributes
+                //TODO rest of attributes
                 .build();
     }
 

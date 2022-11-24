@@ -11,6 +11,11 @@ public class NoteMapper {
 
     NoteDTO fromNoteEntityToNoteDTO(NoteEntity aNoteEntity){
         return NoteDTO.builder()
+                .id(aNoteEntity.getId())
+                .title(aNoteEntity.getTitle())
+                .notes(aNoteEntity.getNotes())
+                .modifiedAt(aNoteEntity.getModifiedAt())
+                .createdAt(aNoteEntity.getCreatedAt())
                 .build();
     }
 
