@@ -21,4 +21,31 @@ public class CheckListService {
     public List<CheckListDTO> getAllCheckLists() {
         return checkListMapper.fromCheckListEntityListToCheckListDTO(checkListRepository.findAll());
     }
+
+    public CheckListEntity getCheckListById(Long id){
+        return checkListRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("CheckList with id: " + id
+                + " not found"));
+    }
+
+
+    public CheckListDTO findCheckByListId(Long id) { //FIXME Required type Checklist
+        CheckListEntity checkListEntity = getCheckListById(id);
+        return checkListMapper.fromCheckListEntityToCheckListDTO(checkListEntity);
+    }
+
+
+    public CheckListDTO addCheckList(CheckListEntity aCheckListEntity) {
+        checkListRepository.save(aCheckListEntity);
+        return checkListMapper.fromCheckListEntityToCheckListDTO(aCheckListEntity);
+    }
+
+    public CheckListDTO updateCheckList(Long aId, CheckListEntity aCheckListEntity) {
+        CheckListEntity checkListEntity = getCheckListById(aId);
+        checkListRepository.save(checkListEntity);
+        return checkListMapper.fromCheckListEntityToCheckListDTO(aCheckListEntity);
+    }
+
+    public void deleteCheckListById(Long aId) {
+        checkListRepository.deleteById(aId);
+    }
 }

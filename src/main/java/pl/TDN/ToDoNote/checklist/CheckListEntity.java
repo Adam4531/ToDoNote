@@ -15,9 +15,9 @@ import java.util.List;
 @Table(name = "CHECKLISTS")
 public class CheckListEntity extends BasicEntity {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String title;
 

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Getter
 @NoArgsConstructor
 @Table(name = "CHECK_LIST_ITEMS")
-public class CheckListItem extends BasicEntity {
+public class CheckListItem extends BasicEntity { //TODO Do we need more attributes?
 
     private String notes;
     private boolean isDone;

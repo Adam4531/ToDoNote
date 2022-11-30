@@ -10,7 +10,7 @@ import java.util.List;
 public class CheckListMapper {
 
 
-    private CheckListDTO fromCheckListEntityToCheckListDTO(CheckListEntity aCheckListEntity) {
+    CheckListDTO fromCheckListEntityToCheckListDTO(CheckListEntity aCheckListEntity) {
         return CheckListDTO.builder()
                 .id(aCheckListEntity.getId())
                 //TODO rest of attributes
@@ -19,7 +19,7 @@ public class CheckListMapper {
 
     List<CheckListDTO> fromCheckListEntityListToCheckListDTO(List<CheckListEntity> aCheckListEntityList) {
         List<CheckListDTO> checkListDTOs = new ArrayList<>();
-        for (CheckListEntity checkListEntity: aCheckListEntityList) {
+        for (CheckListEntity checkListEntity : aCheckListEntityList) {
             fromCheckListEntityToCheckListDTO(checkListEntity);
         }
         return checkListDTOs;
