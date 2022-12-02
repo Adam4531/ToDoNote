@@ -41,7 +41,7 @@ public class CheckListService {
 
     public CheckListDTO updateCheckList(Long aId, CheckListEntity aCheckListEntity) {
         CheckListEntity checkListEntity = getCheckListById(aId);
-        checkListRepository.save(checkListEntity);
+        checkListRepository.save(aCheckListEntity);
         return checkListMapper.fromCheckListEntityToCheckListDTO(aCheckListEntity);
     }
 
