@@ -13,9 +13,9 @@ import java.time.LocalDateTime;
 @Table(name = "NOTES")
 public class NoteEntity extends BasicEntity {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String title;
 
