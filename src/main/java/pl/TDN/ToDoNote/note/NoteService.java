@@ -23,23 +23,25 @@ public class NoteService {
     }
 
     NoteEntity getNoteById(Long aId){
-        return noteRepository.findById(aId).orElseThrow(() -> new IllegalArgumentException("Note with id " + id + " not found!"));
+        return noteRepository.findById(aId).orElseThrow(() -> new IllegalArgumentException("Note with id " + aId + " not found!"));
     }
 
     NoteDTO findNoteById(Long aId) { //TODO
          return noteMapper.fromNoteEntityToNoteDTO(getNoteById(aId));
     }
 
-    NoteDTO addNote(NoteEntity aNoteEntity) { //TODO
+    NoteDTO addNote(NoteEntity aNoteEntity) {
+        noteRepository.save(aNoteEntity);
+        return noteMapper.fromNoteEntityToNoteDTO(aNoteEntity);
     }
 
-    NoteDTO updateNote(Long aId, NoteEntity aNoteEntity) { //TODO
+    NoteDTO updateNote(Long aId, NoteEntity aNoteEntity) {
         NoteEntity noteEntity = getNoteById(aId);
         noteRepository.save(aNoteEntity);
         return noteMapper.fromNoteEntityToNoteDTO(aNoteEntity);
     }
 
-    void deleteNote(Long aId){ //TODO
+    void deleteNote(Long aId){
         noteRepository.deleteById(aId);
     }
 }

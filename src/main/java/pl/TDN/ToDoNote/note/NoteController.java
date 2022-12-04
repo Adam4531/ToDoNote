@@ -34,7 +34,7 @@ public class NoteController { //TODO
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public NoteDTO addNote(NoteEntity aNoteEntity) {
+    public NoteDTO addNote(@RequestBody NoteEntity aNoteEntity) {
         return noteService.addNote(aNoteEntity);
     }
 
@@ -49,7 +49,7 @@ public class NoteController { //TODO
 
     @DeleteMapping("/{id}")
     public ResponseEntity<NoteDTO> deleteNote(@PathVariable Long id) {
-        NoteEntity noteEntity = noteService.getNoteById(id);
+        noteService.deleteNote(id);
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("HEADER", "Note with id" + id + " has been deleted successfully!");
         return new ResponseEntity<>(httpHeaders, HttpStatus.ACCEPTED);
