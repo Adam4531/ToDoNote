@@ -39,7 +39,6 @@ public class CheckListController {
     }
 
     @PutMapping("/{id}")
-//    @ResponseStatus(HttpStatus.ACCEPTED)
     public ResponseEntity<CheckListDTO> updateCheckList(@PathVariable Long id, @RequestBody CheckListEntity aCheckListEntity) {
         CheckListDTO updatedCheckList = checkListService.updateCheckList(id, aCheckListEntity);
         final HttpHeaders httpHeaders = new HttpHeaders();
@@ -50,7 +49,6 @@ public class CheckListController {
     }
 
     @DeleteMapping("/{id}")
-//    @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<CheckListDTO> deleteCheckList(@PathVariable Long id){
         checkListService.deleteCheckListById(id);
         final HttpHeaders httpHeaders = new HttpHeaders();
